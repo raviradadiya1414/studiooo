@@ -28,6 +28,40 @@ setTimeout(function(){
     loder.style.top = "-110%"
 },6000)
 
+var loginPage = document.querySelector("#login-page")
+var loginLink = document.querySelector("#login-link")
+var closeLogin = document.querySelector("#close-login")
+var loginForm = document.querySelector("#login-form")
+
+if (loginLink && loginPage) {
+    loginLink.addEventListener("click", function (e) {
+        e.preventDefault()
+        loginPage.style.display = "flex"
+    })
+}
+
+if (closeLogin && loginPage) {
+    closeLogin.addEventListener("click", function () {
+        loginPage.style.display = "none"
+    })
+}
+
+if (loginForm && loginPage) {
+    loginForm.addEventListener("submit", function (e) {
+        e.preventDefault()
+        loginPage.style.display = "none"
+        alert("Login submitted")
+    })
+}
+
+if (loginPage) {
+    loginPage.addEventListener("click", function (e) {
+        if (e.target === loginPage) {
+            loginPage.style.display = "none"
+        }
+    })
+}
+
 
 // var cont = document.querySelector("#side-2")
 // var con = document.querySelectorAll(".side-p1")
